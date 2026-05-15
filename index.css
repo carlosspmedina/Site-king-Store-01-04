@@ -1,106 +1,305 @@
- *{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:Arial, Helvetica, sans-serif;
+/* RESET GERAL */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+    scroll-behavior: smooth;
 }
 
-/* FUNDO */
 body{
-background-color:#111;
-color:white;
+    background-color: #111;
+    color: white;
+    overflow-x: hidden; /* Evita barra de rolagem lateral */
 }
 
-/* MENU */
+/* MENU SUPERIOR */
 header{
-background-color:black;
-display:flex;
-justify-content:space-between;
-align-items:center;
-padding:20px 60px;
+    background-color: #000000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 5%; /* Padding em % ajuda na responsividade */
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.img-logo {
+    height: 50px; /* Diminuído levemente para telas médias */
+    width: auto;
+}
+
+.logo h1 {
+    font-size: 20px;
+    color: white;
+    text-transform: uppercase;
 }
 
 .logo span{
-color:gold;
+    color: gold;
+}
+
+nav {
+    display: flex;
+    align-items: center;
 }
 
 nav a{
-color:white;
-text-decoration:none;
-margin-left:30px;
-font-size:18px;
+    color: white !important;
+    text-decoration: none;
+    margin-left: 20px;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: 0.3s;
 }
 
 nav a:hover{
-color:gold;
+    color: gold !important;
 }
 
-/* PRIMEIRA IMAGEM */
+.fa-whatsapp { color: #25d366; }
+.fa-instagram { color: #e4405f; }
+
+/* BANNER PRINCIPAL */
 .secao-img1{
-width:100%;
-height:100vh;
-
-background-image: url("leaoking.jpg.jpg");
-background-size: cover;
-background-position: center 10%;
-background-repeat: no-repeat;
-
-display:flex;
-align-items:center;
-padding:60px;
-}
-
-/* TEXTO */
-.texto{
-max-width:500px;
+    width: 100%;
+    height: 80vh; /* Ajustado de 100vh para 80vh para melhor visualização inicial */
+    background-image: url("leaoking.jpg.jpg");
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    padding: 5%;
 }
 
 .texto h2{
-font-size:50px;
-margin-bottom:20px;
+    font-size: clamp(28px, 5vw, 45px); /* Fonte fluida: min 28px, max 45px */
+    margin-bottom: 20px;
 }
 
-.texto p{
-font-size:22px;
-margin-bottom:30px;
-}
-
-/* BOTÃO */
 button{
-background:#f7c948;
-border:none;
-padding:15px 35px;
-font-size:18px;
-border-radius:10px;
-cursor:pointer;
-font-weight:bold;
+    background: #f7c948;
+    border: none;
+    padding: 12px 30px;
+    font-size: 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.3s;
 }
 
-button:hover{
-background:#e6b63f;
+/* SEÇÃO DE PRODUTOS */
+#nossos-produtos {
+    padding: 50px 20px;
+    background-color: #111;
 }
 
-/* SEGUNDA IMAGEM */
+.produtos-titulo li {
+    font-size: 26px;
+    list-style: none;
+    text-align: center;
+    font-weight: bold;
+    color: gold;
+    text-transform: uppercase;
+    margin-bottom: 30px;
+}
+
+/* CONTAINER DE PRODUTOS */
+.container {
+    display: grid; /* Mudado para Grid para maior controle */
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); 
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-bottom: 40px;
+}
+
+.card {
+    background-color: #1a1a1a;
+    border: 1px solid #333;
+    padding: 12px;
+    border-radius: 12px;
+    text-align: center;
+    transition: 0.3s;
+}
+
+.card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+.card h2 { font-size: 15px; margin-bottom: 5px; }
+.card p { font-size: 12px; color: #ccc; }
+.preco { font-size: 16px !important; font-weight: bold; color: gold !important; }
+
+/* FUNDO SEÇÃO 2 */
 .secao-img2{
-width:100%;
-height:100vh;
+    width: 100%;
+    background-image: url("leao2.jpg.jpg");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-color: rgba(0,0,0,0.7);
+    background-blend-mode: darken; 
+    padding: 40px 0;
+}
 
-background-image: url("leao2.jpg.jpg");
-background-size: cover 20%;
-background-position: center 10%;
-background-repeat: no-repeat 50%;
+/* --- MEDIA QUERIES (RESPONSIVIDADE) --- */
+
+/* Celulares (Telas até 768px) */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column; /* Logo em cima, Menu embaixo */
+        padding: 15px;
+        gap: 10px;
+    }
+
+    nav {
+        width: 100%;
+        justify-content: center;
+        flex-wrap: wrap; /* Ícones quebram linha se não couberem */
+        gap: 10px;
+    }
+
+    nav a {
+        margin-left: 0;
+        font-size: 13px;
+    }
+
+    .img-logo { height: 40px; }
+    
+    .secao-img1 {
+        justify-content: center;
+        text-align: center;
+    }
+
+    .container {
+        grid-template-columns: repeat(2, 1fr); /* 2 produtos por linha no celular */
+        gap: 10px;
+    }
+}
+
+/* Celulares Pequenos (Telas até 480px) */
+@media (max-width: 480px) {
+    .container {
+        grid-template-columns: repeat(2, 1fr); /* Mantém 2 ou muda para 1 se preferir */
+    }
+    
+    .logo h1 { font-size: 18px; }
+    
+    nav a span { display: none; } /* Esconde o texto do insta/face e deixa só o ícone para economizar espaço */
 }
 
 /* RODAPÉ */
 footer{
-text-align:center;
-padding:40px;
-background:black;
+    text-align: center;
+    padding: 20px;
+    background: #000;
+    font-size: 12px;
+}
+/* SEÇÃO DE CONTATOS */
+.secao-contato {
+    padding: 60px 20px;
+    background-color: #1a1a1a; /* Cinza bem escuro para destacar do fundo preto */
+    display: flex;
+    justify-content: center;
 }
 
-footer a{
-color:gold;
-text-decoration:none;
-display:block;
-margin-top:10px;
+.contato-container {
+    width: 100%;
+    max-width: 600px;
+    background-color: #111;
+    padding: 30px;
+    border: 1px solid #333;
+    border-radius: 15px;
+}
+
+.contato-container h2 {
+    color: gold;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.contato-container p {
+    text-align: center;
+    color: #888;
+    margin-bottom: 30px;
+    font-size: 14px;
+}
+
+.campo {
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+.campo label {
+    font-size: 14px;
+    margin-bottom: 8px;
+    color: #ccc;
+}
+
+/* Estilo para Inputs, Textarea e Select */
+.campo input, 
+.campo textarea, 
+.campo select {
+    background: #222;
+    border: 1px solid #444;
+    padding: 12px;
+    border-radius: 5px;
+    color: white;
+    outline: none;
+    transition: 0.3s;
+}
+
+.campo input:focus, 
+.campo textarea:focus, 
+.campo select:focus {
+    border-color: gold;
+}
+
+/* Radio e Checkbox */
+.campo-inline, .campo-check {
+    margin-bottom: 20px;
+    font-size: 14px;
+    color: #ccc;
+}
+
+.opcoes {
+    margin-top: 10px;
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.campo-check {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.btn-enviar {
+    width: 100%;
+    margin-top: 10px;
+}
+
+/* Ajuste para o mapa não sobrepor o formulário no celular */
+@media (max-width: 768px) {
+    .mapa-container {
+        display: none; /* Oculta o mapa flutuante em telas pequenas para liberar espaço pro formulário */
+    }
 }

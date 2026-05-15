@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>King Store</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+<header>
+    <div class="logo">
+        <img src="produtos.king/logo_preto.jpg.jpeg" alt="Logo King Store" class="img-logo">
+        <h1>King <span>Store</span></h1>
+    </div>
+    <nav>
+        <a href="#">Início</a>
+        <a href="https://www.facebook.com/share/16fDFGuNaL/" target="_blank">
+            <i class="fa-brands fa-facebook"></i> <span>Facebook</span>
+        </a>
+        <a href="https://www.instagram.com/kingstoreimported?utm_source=qr&igsh=MTdpaXJjaGtkamVpYQ==" target="_blank">
+            <i class="fa-brands fa-instagram"></i> <span>Instagram</span>
+        </a>
+        <a href="https://wa.me/5511949008253" target="_blank">
+            <i class="fa-brands fa-whatsapp"></i> <span>WhatsApp</span>
+        </a>
+    </nav>
+</header>
+
+<section class="secao-img1">
+    <div class="texto">
+        <h2>Bem-vindo à King Store</h2>
+        <p>As melhores camisas de futebol você encontra aqui.</p>
+        <a href="#nossos-produtos">
+            <button>Ver Produtos</button>
+        </a>
+    </div>
+</section>
+
+<main id="nossos-produtos">
+    <ul class="produtos-titulo">
+        <li>Nossos Produtos</li>
+    </ul>
+    
+    <section class="secao-img2">
+        <div class="container">
+            <div class="card">
+                <img src="produtos.king/camisa.nova.brasil.jpeg" alt="Camisa Retro">
+                <h2>Camisa Retro</h2>
+                <p>Brasil Amarela</p>
+                <p class="preco">R$ 220,00</p>
+            </div>
+
+            <div class="card">
+                <img src="produtos.king/camisa.argentina.jpg.jpeg" alt="Camisa Argentina">
+                <h2>Camisa Jogador</h2>
+                <p>Argentina 2026</p>
+                <p class="preco">R$ 180,00</p>
+            </div>
+
+            <div class="card">
+                <img src="produtos.king/camisa.palmeiras.jpg.jpg" alt="Camisa Palmeiras">
+                <h2>Camisa Retro</h2>
+                <p>Palmeiras A+</p>
+                <p class="preco">R$ 220,00</p>
+            </div>
+
+            <div class="card">
+                <img src="produtos.king/camisa.preta.sp.jpeg" alt="Camisa Brasil Azul">
+                <h2>Camisa Retro</h2>
+                <p>Brasil Azul</p>
+                <p class="preco">R$ 220,00</p>
+            </div>
+
+            <div class="card">
+                <img src="produtos.king/conjunto.corinthi.jpg.jpg" alt="Camisa Corinthians">
+                <h2>Camisa Retro</h2>
+                <p>Corinthians A+</p>
+                <p class="preco">R$ 220,00</p>
+            </div>
+
+            <div class="card">
+                <img src="produtos.king/camisa.vermelha.sp.jpeg" alt="Camisa São Paulo">
+                <h2>Camisa Retro</h2>
+                <p>São Paulo FC</p>
+                <p class="preco">R$ 220,00</p>
+            </div>
+
+            <div class="card">
+                <img src="produtos.king/ronal.9.jpg.jpeg" alt="Camisa Ronaldo 9">
+                <h2>Camisa Retro</h2>
+                <p>Ronaldo 9</p>
+                <p class="preco">R$ 220,00</p>
+            </div>
+
+            <div class="card">
+                <img src="produtos.king/conjunto.branco.jpg.jpeg" alt="Conjunto Branco">
+                <h2>Camisa Retro</h2>
+                <p>Brasil Branca</p>
+                <p class="preco">R$ 220,00</p>
+            </div>
+
+            <div class="card">
+                <img src="produtos.king/camisa.a.jpg.jpg" alt="Camisa Retro">
+                <h2>Camisa Retro</h2>
+                <p>Especial</p>
+                <p class="preco">R$ 220,00</p>
+            </div>
+
+            <div class="card">
+                <img src="produtos.king/camisa.az.jpg.jpg" alt="Camisa Retro">
+                <h2>Camisa Retro</h2>
+                <p>Limitada</p>
+                <p class="preco">R$ 220,00</p>
+            </div>
+             <div class="card">
+                <img src="produtos.king/camisa.ama.jpg.jpg" alt="Camisa Retro">
+                <h2>Camisa Retro</h2>
+                <p>Limitada</p>
+                <p class="preco">R$ 220,00</p>
+            </div>
+            <div class="card">
+                <img src="produtos.king/camisa.brasil.infantil.jpeg" alt="Camisa Retro">
+                <h2>Camisa Retro</h2>
+                <p>Limitada</p>
+                <p class="preco">R$ 220,00</p>
+            </div>
+        </div>
+    </section>
+</main>
+
+<div id="modal-produto" style="display: none; position: fixed; z-index: 2000; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.85); backdrop-filter: blur(5px);">
+    <div class="modal-content" style="background-color: #1a1a1a; margin: 10vh auto; padding: 20px; border: 2px solid gold; width: 90%; max-width: 350px; border-radius: 15px; text-align: center; position: relative; color: white;">
+        <span id="fechar-x" style="position: absolute; right: 15px; top: 5px; color: gold; font-size: 30px; cursor: pointer;">×</span>
+        <img id="modal-img" src="" style="width: 100%; max-height: 300px; object-fit: contain; border-radius: 10px; margin-bottom: 10px;">
+        <h2 id="modal-titulo" style="font-size: 20px; color: gold;"></h2>
+        <p id="modal-preco" style="font-size: 22px; font-weight: bold; margin: 10px 0;"></p>
+        <button style="width: 100%; background: gold; color: black; border: none; padding: 12px; font-weight: bold; cursor: pointer; border-radius: 5px;">Finalizar Pedido</button>
+    </div>
+</div>
+
+
+<section id="contato" class="secao-contato">
+    <div class="contato-container">
+        <h2>Contatos</h2>
+        <p>Teremos 5 tipos de campos diferentes:</p>
+
+        <form>
+            <div class="campo">
+                <label>* Nome e sobrenome</label>
+                <input type="text" placeholder="Seu nome completo" required>
+            </div>
+
+            <div class="campo">
+                <label>E-mail</label>
+                <input type="email" placeholder="seuemail@exemplo.com">
+            </div>
+
+            <div class="campo">
+                <label>Telefone</label>
+                <input type="tel" placeholder="(00) 00000-0000">
+            </div>
+
+            <div class="campo">
+                <label>* Mensagem</label>
+                <textarea rows="5" placeholder="Como podemos ajudar?"></textarea>
+            </div>
+
+            <div class="campo-inline">
+                <label>Como prefere o nosso contato?</label>
+                <div class="opcoes">
+                    <input type="radio" name="contato-pref" id="r-email"> <label for="r-email">E-mail</label>
+                    <input type="radio" name="contato-pref" id="r-tel"> <label for="r-tel">Telefone</label>
+                    <input type="radio" name="contato-pref" id="r-wpp"> <label for="r-wpp">Whatsapp</label>
+                </div>
+            </div>
+
+            <div class="campo">
+                <label>Qual o motivo do seu contato?</label>
+                <select>
+                    <option value="">Selecione</option>
+                    <option value="duvida">Dúvida sobre produto</option>
+                    <option value="pedido">Status do pedido</option>
+                    <option value="parceria">Parcerias</option>
+                </select>
+            </div>
+
+            <div class="campo-check">
+                <input type="checkbox" id="novidades">
+                <label for="novidades">Gostaria de receber nossas novidades por e-mail?</label>
+            </div>
+
+            <button type="submit" class="btn-enviar">Enviar Mensagem</button>
+        </form>
+    </div>
+</section>
+
+<div class="mapa-container">
+    <iframe src="https://www.google.com/maps/embed?pb=!4v1778803058032!6m8!1m7!1sMIOaYrW9qwIYvte1ENMPjQ!2m2!1d-23.64998887844929!2d-46.44410494928627!3f56.889247161288466!4f-2.346340227100569!5f0.42149599786022457" width="300" height="200" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+</div>
+
+
+<footer>
+    <p>© 2026 King Store - Todos os direitos reservados.</p>
+</footer>
+
+
+<script>
+    window.onload = function() {
+        const dataAtual = new Date();
+        const formatoOpcoes = { 
+            day: '2-digit', month: '2-digit', year: 'numeric', 
+            hour: '2-digit', minute: '2-digit', second: '2-digit' 
+        };
+        const dataHoraFormatada = dataAtual.toLocaleString('pt-BR', formatoOpcoes);
+        alert("Bem-vindo à King Store!\n\nData e Hora do acesso:\n" + dataHoraFormatada);
+    };
+
+    const modal = document.getElementById("modal-produto");
+    const modalImg = document.getElementById("modal-img");
+    const modalTitulo = document.getElementById("modal-titulo");
+    const modalPreco = document.getElementById("modal-preco");
+    const btnFechar = document.getElementById("fechar-x");
+
+    const fotos = document.querySelectorAll(".card img");
+
+    fotos.forEach(img => {
+        img.style.cursor = "pointer"; 
+        
+        img.onclick = function() {
+            const pai = img.parentElement;
+            const tituloCard = pai.querySelector("h2").innerText;
+            const precoCard = pai.querySelector(".preco").innerText;
+
+            modalImg.src = img.src;
+            modalTitulo.innerText = tituloCard;
+            modalPreco.innerText = precoCard;
+
+            modal.style.display = "block";
+        };
+    });
+
+    btnFechar.onclick = function() {
+        modal.style.display = "none";
+    };
+
+    window.onclick = function(event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    };
+</script>
+</body>
+</html>
